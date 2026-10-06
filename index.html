@@ -51,6 +51,8 @@
   </main>
 
 
+
+
   <script>
     (() => {
       const params = new URLSearchParams(window.location.search);
@@ -59,21 +61,3 @@
         const node = document.querySelector(selector);
         if (node) node.textContent = value;
       };
-      const fields = [...document.querySelectorAll('.field')];
-})();
-</script>
-<script>
-(()=>{
- const p=new URLSearchParams(location.search);
- if(p.get('verify')!=='1187899') return;
- const img=document.querySelector('.photo'); if(img) img.src='assets/topista-basaliza-photo.png';
- const set=(sel,v)=>{const n=document.querySelector(sel);if(n)n.textContent=v};
- set('.name','TOPISTA BASALIZA'); set('.role','FOREST RANGER');
- const ref=document.querySelector('.reference strong'); if(ref) ref.textContent='1187899';
- const vals=[...document.querySelectorAll('.field .value')];
- const data=['TOPISTA BASALIZA','FOREST RANGER','1187899','Natural Resources Department','Holder contact not provided','Iganga District Local Government','Ssemanda Jonathan','0790 479 927\n0750 977 775','Forestry Sector','Government service identity · Valid for official use'];
- vals.forEach((n,i)=>{if(data[i]!==undefined){n.innerHTML=data[i].replaceAll('\n','<br>')}});
-})();
-</script>
-</body>
-</html>

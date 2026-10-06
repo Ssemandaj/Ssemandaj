@@ -49,5 +49,50 @@
     </section>
     <div class="footer">For official verification. Confirm any concern with the Iganga District Natural Resources Department.</div>
   </main>
+
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('verify') !== '1874690') return;
+      const setText = (selector, value) => {
+        const node = document.querySelector(selector);
+        if (node) node.textContent = value;
+      };
+      const fields = [...document.querySelectorAll('.field')];
+      const valueFor = (label) => {
+        const field = fields.find((item) => item.querySelector('.label')?.textContent.trim().toLowerCase() === label.toLowerCase());
+        return field ? field.querySelector('.value') : null;
+      };
+      const photo = document.querySelector('img.photo');
+      if (photo) {
+        photo.src = 'assets/ssemanda-jonathan-photo.jpg';
+        photo.alt = 'Photo of SSEMANDA JONATHAN';
+      }
+      setText('.name', 'SSEMANDA JONATHAN');
+      setText('.role', 'DISTRICT FORESTRY OFFICER (DFO)');
+      setText('.reference strong', '1874690');
+      setText('.brand span', 'Natural Resources Department · Forestry Sector');
+      setText('.heading p', 'Natural Resources Department · Forestry Sector');
+      setText('.heading h1', 'Iganga District Local Government');
+      const holderName = valueFor('Holder name');
+      if (holderName) holderName.textContent = 'SSEMANDA JONATHAN';
+      const designation = valueFor('Designation');
+      if (designation) designation.textContent = 'DISTRICT FORESTRY OFFICER (DFO)';
+      const employee = valueFor('Employee number');
+      if (employee) employee.textContent = '1874690';
+      const department = valueFor('Department');
+      if (department) department.textContent = 'Natural Resources Department';
+      const holderContact = valueFor('Holder contact');
+      if (holderContact) holderContact.innerHTML = '<a href="tel:+256790479927">0790 479 927</a><br><a href="tel:+256750977775">0750 977 775</a>';
+      const station = valueFor('Organisation / duty station');
+      if (station) station.textContent = 'Iganga District Local Government';
+      const supervisor = valueFor('Supervisor');
+      if (supervisor) supervisor.textContent = 'Mr. Samanya Abdul · DNRO';
+      const supervisorContact = valueFor('Supervisor contact');
+      if (supervisorContact) supervisorContact.innerHTML = '<a href="tel:+256706409799">0706 409 799</a>';
+      const sector = valueFor('Sector');
+      if (sector) sector.textContent = 'Forestry Sector';
+    })();
+  </script>
 </body>
 </html>
